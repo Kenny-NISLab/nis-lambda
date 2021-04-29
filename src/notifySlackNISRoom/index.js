@@ -34,7 +34,7 @@ function createText(students) {
 
   let msg =
     "【NISLAB在室情報】\n" +
-    date.getMonth() +
+    (date.getMonth() + 1) +
     "月" +
     date.getDate() +
     "日 " +
