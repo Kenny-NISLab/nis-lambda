@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "src/notifySlackNISRoom/**"
 jobs:
   AWS_Lambda_Deploy:
     runs-on: ubuntu-latest
@@ -17,12 +19,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
-      - run: |
-          zip -j function.zip ./src/getStudents/index.js
-          aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_GETSTUDENTS }} --zip-file fileb://function.zip
-      - run: |
-          zip -j function.zip ./src/patchStudent/index.js
-          aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_PATCHSTUDENT }} --zip-file fileb://function.zip
       - run: |
           zip -j function.zip ./src/notifySlackNISRoom/index.js
           aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_NOTIFYSLACKNISROOM }} --zip-file fileb://function.zip
