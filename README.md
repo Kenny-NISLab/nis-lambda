@@ -1,4 +1,4 @@
-# NISROOM and NISPLAN Lambda
+# NISROOM API for Lambda
 
 ## Overview
 
