@@ -4,7 +4,7 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient({
   region: process.env.DYNAMODB_REGION,
 });
 
-exports.handler = (event, context, callback) => {
+exports.handler = () => {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
   };
