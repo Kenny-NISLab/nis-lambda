@@ -2,7 +2,9 @@
 
 ## Overview
 
-NISLAB Room Monitor API Server for AWS Lambda
+### NISLAB Room Monitor API Server for AWS Lambda
+
+### Frontend is [here](https://github.com/Kenny-NISLab/nisroom.git)
 
 ## Architecture
 
