@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '14'
       - run: npm install --production
-      - run: zip -j function.zip ./src/getStudents
+      - run: zip -r -j function.zip ./src/getStudents
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
