@@ -2,9 +2,9 @@
 
 ## Overview
 
-### NISLAB Room Monitor API Server for AWS Lambda
+### NISLAB Room Monitor API for AWS Lambda
 
-### Frontend is [here](https://github.com/Kenny-NISLab/nisroom.git)
+Frontend is [here](https://github.com/Kenny-NISLab/nisroom.git)
 
 ## Architecture
 
@@ -12,14 +12,11 @@
 
 ## How To Use Repository
 
-### 1. Fork and Clone
-
-### 2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom-lambda.git`
-
-### 3. `git pull upstream main`
+1. Fork and Clone
+2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom-lambda.git`
+3. `git pull upstream main`
 
 ## Build Setup
 
-### 1. `npm install`
-
-### 2. `npm run format`
+1. `npm install`
+2. `npm run format`
