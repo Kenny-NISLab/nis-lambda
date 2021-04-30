@@ -4,7 +4,7 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient({
 });
 
 // ハンドラー関数
-exports.handler = function (event, context, callback) {
+exports.handler = function () {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
   };
@@ -39,7 +39,7 @@ function leaveStudent(student) {
       ReturnValues: "UPDATED_NEW",
     };
 
-    dynamoDB.update(params, function (err, data) {
+    dynamoDB.update(params, function (err) {
       if (err) {
         console.log("Error:", err);
       }
