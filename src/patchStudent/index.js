@@ -31,24 +31,24 @@ exports.handler = (event, context, callback) => {
     if (!body.schedule.length) {
       body.schedule.push("");
     }
-    (params.UpdateExpression = "set is_stay = :i, schedule = :s"),
-      (params.ExpressionAttributeValues = {
-        ":i": body.is_stay,
-        ":s": dynamoDB.createSet(body.schedule),
-      });
+    params.UpdateExpression = "set is_stay = :i, schedule = :s";
+    params.ExpressionAttributeValues = {
+      ":i": body.is_stay,
+      ":s": dynamoDB.createSet(body.schedule),
+    };
   } else if (body.is_stay) {
-    (params.UpdateExpression = "set is_stay = :i"),
-      (params.ExpressionAttributeValues = {
-        ":i": body.is_stay,
-      });
+    params.UpdateExpression = "set is_stay = :i";
+    params.ExpressionAttributeValues = {
+      ":i": body.is_stay,
+    };
   } else if (body.schedule) {
     if (!body.schedule.length) {
       body.schedule.push("");
     }
-    (params.UpdateExpression = "set schedule = :s"),
-      (params.ExpressionAttributeValues = {
-        ":s": dynamoDB.createSet(body.schedule),
-      });
+    params.UpdateExpression = "set schedule = :s";
+    params.ExpressionAttributeValues = {
+      ":s": dynamoDB.createSet(body.schedule),
+    };
   } else {
     callback(null, response);
   }
