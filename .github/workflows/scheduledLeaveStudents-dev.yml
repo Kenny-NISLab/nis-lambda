@@ -2,7 +2,7 @@ name: Lambda Deploy - scheduledLeaveStudents-dev
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
       - "src/scheduledLeaveStudents/**"
 jobs:
