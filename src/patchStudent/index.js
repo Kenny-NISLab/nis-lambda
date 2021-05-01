@@ -27,7 +27,7 @@ exports.handler = (event, context, callback) => {
     body: "No Change.",
   };
 
-  if (body.is_stay && body.schedule) {
+  if (body.is_stay != null && body.schedule) {
     if (!body.schedule.length) {
       body.schedule.push("");
     }
@@ -36,7 +36,7 @@ exports.handler = (event, context, callback) => {
       ":i": body.is_stay,
       ":s": dynamoDB.createSet(body.schedule),
     };
-  } else if (body.is_stay) {
+  } else if (body.is_stay != null) {
     params.UpdateExpression = "set is_stay = :i";
     params.ExpressionAttributeValues = {
       ":i": body.is_stay,
@@ -53,7 +53,7 @@ exports.handler = (event, context, callback) => {
     callback(null, response);
   }
 
-  if (body.is_stay || body.schedule) {
+  if (body.is_stay != null || body.schedule) {
     dynamoDB.update(params, function (err, data) {
       if (err) {
         console.log("Error", err);
