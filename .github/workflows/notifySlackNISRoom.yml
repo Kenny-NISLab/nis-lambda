@@ -21,4 +21,4 @@ jobs:
           aws-region: ap-northeast-1
       - run: |
           zip -j function.zip ./src/notifySlackNISRoom/index.js
-          aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_NOTIFYSLACKNISROOM }} --zip-file fileb://function.zip
+          aws lambda update-function-code --function-name notifySlackNISRoom --zip-file fileb://function.zip

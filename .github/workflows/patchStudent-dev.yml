@@ -1,10 +1,10 @@
-name: Lambda Deploy - scheduledLeaveStudents
+name: Lambda Deploy - patchStudent-dev
 on:
   push:
     branches:
-      - main
+      - develop
     paths:
-      - "src/scheduledLeaveStudents/**"
+      - "src/patchStudent/**"
 jobs:
   AWS_Lambda_Deploy:
     runs-on: ubuntu-latest
@@ -20,5 +20,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - run: |
-          zip -j function.zip ./src/scheduledLeaveStudents/index.js
-          aws lambda update-function-code --function-name scheduledLeaveStudents --zip-file fileb://function.zip
+          zip -j function.zip ./src/patchStudent/index.js
+          aws lambda update-function-code --function-name patchStudent-dev --zip-file fileb://function.zip
