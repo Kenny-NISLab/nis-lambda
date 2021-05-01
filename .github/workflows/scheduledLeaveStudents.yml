@@ -21,4 +21,4 @@ jobs:
           aws-region: ap-northeast-1
       - run: |
           zip -j function.zip ./src/scheduledLeaveStudents/index.js
-          aws lambda update-function-code --function-name ${{ secrets.AWS_LAMBDA_FUNCTION_SCHEDULEDLEAVESTUDENTS }} --zip-file fileb://function.zip
+          aws lambda update-function-code --function-name scheduledLeaveStudents --zip-file fileb://function.zip
