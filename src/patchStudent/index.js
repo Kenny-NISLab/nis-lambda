@@ -24,7 +24,7 @@ exports.handler = (event, context, callback) => {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "*",
     },
-    body: "No Change.",
+    body: "No Response Body.",
   };
 
   if (body.is_stay != null && body.schedule) {
