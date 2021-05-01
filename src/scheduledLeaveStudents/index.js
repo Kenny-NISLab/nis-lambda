@@ -3,7 +3,6 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient({
   region: process.env.DYNAMODB_REGION,
 });
 
-// ハンドラー関数
 exports.handler = function () {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
