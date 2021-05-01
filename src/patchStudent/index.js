@@ -4,8 +4,8 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient({
 });
 
 exports.handler = (event, context, callback) => {
-  // const body = JSON.parse(event.body);
-  const body = event.body;
+  const body = JSON.parse(event.body);
+  //const body = event.body;
 
   let params = {
     TableName: process.env.DYNAMODB_TABLE,
