@@ -13,8 +13,8 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom.git)
 ## How To Use Repository
 
 1. Fork and Clone
-2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom-lambda.git`
-3. `git pull upstream main`
+2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom-api.git`
+3. `git pull upstream develop`
 
 ## Build Setup
 
