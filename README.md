@@ -70,14 +70,14 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 
 - PATCH Data (JSON)
 
-| Category               | JSON Key | Type  | Description                                               |
-| ---------------------- | -------- | ----- | --------------------------------------------------------- |
-| Schedule date of visit | schedule | Array | Scheduled date of visit ({YYYY-MM-DD, YYYY-MM-D'D', ...}) |
-
-If the value is an empty array, it will be null.
+| Category               | JSON Key | Type    | Description                                                                                                   |
+| ---------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| Status of stay         | is_stay  | Boolean | Whether the member is in the Lab or not (true or false)                                                       |
+| Schedule date of visit | schedule | Array   | Scheduled date of visit ({YYYY-MM-DD, YYYY-MM-D'D', ...})<br>If the value is an empty array, it will be null. |
 
 - Response Data (JSON)
 
-| Category                | JSON Key | Type  | Description                                                  |
-| ----------------------- | -------- | ----- | ------------------------------------------------------------ |
-| Scheduled date of visit | schedule | Array | Scheduled date of visit (["YYYY-MM-DD", "YYYY-MM-D'D', ...]) |
+| Category                | JSON Key | Type    | Description                                                       |
+| ----------------------- | -------- | ------- | ----------------------------------------------------------------- |
+| Status of stay          | is_stay  | Boolean | Whether the member is in the Lab or not (Same data as PATCH Data) |
+| Scheduled date of visit | schedule | Array   | Scheduled date of visit (["YYYY-MM-DD", "YYYY-MM-D'D', ...])      |
