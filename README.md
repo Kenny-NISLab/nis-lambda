@@ -99,11 +99,6 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 <th align="center" scope="col">e_first_name</th>
 <th align="center" scope="col">e_last_name</th>
 <th align="center" scope="col">grade</th>
-<th align="center" scope="col">is_stay</th>
-<th align="center" scope="col">j_first_name</th>
-<th align="center" scope="col">j_last_name</th>
-<th align="center" scope="col">student_id</th>
-<th align="center" scope="col">schedule</th>
 </tr>
 </thead>
 <tbody>
@@ -113,6 +108,29 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 <td align="center">{String}</td>
 <td align="center">{String}</td>
 <td align="center">{Integer}</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<thead>
+<tr>
+<th scope="col">Primary Key</th>
+<th align="center" scope="col" rowspan="2" colspan="9">Attributes</th>
+</tr>
+<tr>
+<th scope="col">Partition Key</th>
+</tr>
+<tr>
+<th align="center" scope="col">is_stay</th>
+<th align="center" scope="col">j_first_name</th>
+<th align="center" scope="col">j_last_name</th>
+<th align="center" scope="col">student_id</th>
+<th align="center" scope="col">schedule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
 <td align="center">{Boolean}</td>
 <td align="center">{String}</td>
 <td align="center">{String}</td>
