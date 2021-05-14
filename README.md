@@ -84,6 +84,7 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 
 ## Database design and structure
 
+- **studentsテーブル**
 <table>
 <thead>
 <tr>
@@ -105,19 +106,19 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 <th align="center" scope="col">student_id</th>
 <th align="center" scope="col">schedule</th>
 </tr>
-</thead>
+</thread>
 <tbody>
 <tr>
-<td align="center">{Integer}</td>
-<td align="center">{String}</td>
-<td align="center">{String}</td>
-<td align="center">{String}</td>
-<td align="center">{Integer}</td>
-<td align="center">{Boolean}</td>
-<td align="center">{String}</td>
-<td align="center">{String}</td>
-<td align="center">{Integer}</td>
-<td align="center">{StringSet}</td>
+<th align="center">{Integer}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{Boolean}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{StringSet}</th>
 </tr>
 </tbody>
 </table>
