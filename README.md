@@ -81,3 +81,44 @@ Frontend is [here](https://github.com/Kenny-NISLab/nisroom)
 | ----------------------- | -------- | ------- | ----------------------------------------------------------------- |
 | Status of stay          | is_stay  | Boolean | Whether the member is in the Lab or not (Same data as PATCH Data) |
 | Scheduled date of visit | schedule | Array   | Scheduled date of visit (["YYYY-MM-DD", "YYYY-MM-D'D', ...])      |
+
+## Database design and structure
+
+- **studentsテーブル**
+<table>
+<thead>
+<tr>
+<th scope="col">Primary Key</th>
+<th align="center" scope="col" rowspan="2" colspan="9">Attributes</th>
+</tr>
+<tr>
+<th scope="col">Partition Key</th>
+</tr>
+<tr>
+<th align="center" scope="col">id</th>
+<th align="center" scope="col">avater</th>
+<th align="center" scope="col">e_first_name</th>
+<th align="center" scope="col">e_last_name</th>
+<th align="center" scope="col">grade</th>
+<th align="center" scope="col">is_stay</th>
+<th align="center" scope="col">j_first_name</th>
+<th align="center" scope="col">j_last_name</th>
+<th align="center" scope="col">student_id</th>
+<th align="center" scope="col">schedule</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<th align="center">{Integer}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{Boolean}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{StringSet}</th>
+</tr>
+</tbody>
+</table>
