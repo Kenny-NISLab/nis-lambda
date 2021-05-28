@@ -39,3 +39,16 @@
 ---
 
 ## 概要
+
+NISLAB Room Monitor API for AWS Lambda
+
+### フロントエンド
+
+[![nisroom](https://img.shields.io/badge/GitHub-nisroom-orange)](https://github.com/Kenny-NISLab/nisroom)
+[![nisplan](https://img.shields.io/badge/GitHub-nisplan-yellow)](https://github.com/Kenny-NISLab/nisplan)
+
+## アーキテクチャ
+
+![nisroom-architecture](https://user-images.githubusercontent.com/49851726/116494988-07617b80-a8dd-11eb-9c49-bb7cda1e2eb3.png)
+
+## API 仕様書
