@@ -52,3 +52,10 @@ NISLAB Room Monitor API for AWS Lambda
 ![nisroom-architecture](https://user-images.githubusercontent.com/49851726/116494988-07617b80-a8dd-11eb-9c49-bb7cda1e2eb3.png)
 
 ## API 仕様書
+
+## API リスト
+
+| No. | API Function No. | Type | API Name        | Overview               |
+| --- | ---------------- | ---- | --------------- | ---------------------- |
+| 0   | NISROOM-000      | API  | nisroom-api     | Production Environment |
+| 1   | NISROOM-001      | API  | nisroom-api-dev | Test Environment       |
