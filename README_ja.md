@@ -55,10 +55,10 @@ NISLAB Room Monitor API for AWS Lambda
 
 ## API リスト
 
-| No. | API 機能 No. | 型 | API 名        | 概要               |
-| --- | ---------------- | ---- | --------------- | ---------------------- |
-| 0   | NISROOM-000      | API  | nisroom-api     | 製品版環境 |
-| 1   | NISROOM-001      | API  | nisroom-api-dev | テスト環境       |
+| No. | API 機能 No. | 型  | API 名          | 概要       |
+| --- | ------------ | --- | --------------- | ---------- |
+| 0   | NISROOM-000  | API | nisroom-api     | 製品版環境 |
+| 1   | NISROOM-001  | API | nisroom-api-dev | テスト環境 |
 
 ### リソース 型名
 
@@ -66,27 +66,27 @@ NISLAB Room Monitor API for AWS Lambda
 
 ---
 
-| HTTP メソッド | アクセス URI   | 目的                         |
-| ----------- | ------------ | --------------------------------- |
-| GET         | /v1/students | メンバーに関する全情報を取得 |
+| HTTP メソッド | アクセス URI | 目的                         |
+| ------------- | ------------ | ---------------------------- |
+| GET           | /v1/students | メンバーに関する全情報を取得 |
 
 - GET Data (JSON)
 
-| カテゴリー | JSON キー | 型 | 概要 |
-| -------- | -------- | ---- | ----------- |
-| None     |          |      |             |
+| カテゴリー | JSON キー | 型  | 概要 |
+| ---------- | --------- | --- | ---- |
+| None       |           |     |      |
 
 - Response Data (JSON)
 
-| カテゴリー                | JSON キー     |  型   |  概要                            |
-| ----------------------- | ------------ | ------- | --------------------------------------- |
-| ID                      | id           | Value   | ID                                      |
-| Image                   | avatar       | URL     | Slackのアイコン                          |
-| First Name (En)         | e_first_name | String  | ファーストネーム（英語）                   |
-| Last Name (En)          | e_last_name  | String  | ラストネーム（英語）                   |
-| Grade                   | grade        | String  | メンバーの学年                         |
+| カテゴリー              | JSON キー    | 型      | 概要                     |
+| ----------------------- | ------------ | ------- | ------------------------ |
+| ID                      | id           | Value   | ID                       |
+| Image                   | avatar       | URL     | Slack のアイコン         |
+| First Name (En)         | e_first_name | String  | ファーストネーム（英語） |
+| Last Name (En)          | e_last_name  | String  | ラストネーム（英語）     |
+| Grade                   | grade        | String  | メンバーの学年           |
 | Status of stay          | is_stay      | Boolean | メンバーの研究室在室情報 |
-| First Name (Ja)         | j_first_name | String  | 名前                  |
-| Last Name (Ja)          | j_last_name  | String  | 苗字                  |
-| Student ID              | student_id   | Value   | 学生 ID                              |
-| Scheduled date of visit | schedule     | Array   | 来室スケジュール                |
+| First Name (Ja)         | j_first_name | String  | 名前                     |
+| Last Name (Ja)          | j_last_name  | String  | 苗字                     |
+| Student ID              | student_id   | Value   | 学生 ID                  |
+| Scheduled date of visit | schedule     | Array   | 来室スケジュール         |
