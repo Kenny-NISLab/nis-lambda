@@ -82,8 +82,8 @@ NISLAB Room Monitor API for AWS Lambda
 | ----------------------- | ------------ | ------- | ------------------------ |
 | ID                      | id           | Value   | ID                       |
 | Image                   | avatar       | URL     | Slack のアイコン         |
-| First Name (En)         | e_first_name | String  | ファーストネーム（英語） |
-| Last Name (En)          | e_last_name  | String  | ラストネーム（英語）     |
+| First Name (En)         | e_first_name | String  | 名前（英語）             |
+| Last Name (En)          | e_last_name  | String  | 苗字（英語）             |
 | Grade                   | grade        | String  | メンバーの学年           |
 | Status of stay          | is_stay      | Boolean | メンバーの研究室在室情報 |
 | First Name (Ja)         | j_first_name | String  | 名前                     |
@@ -104,7 +104,7 @@ NISLAB Room Monitor API for AWS Lambda
 | カテゴリー              | JSON キー | 型      | 概要                                                                                        |
 | ----------------------- | --------- | ------- | ------------------------------------------------------------------------------------------- |
 | Status of stay          | is_stay   | Boolean | メンバーの研究室在室情報                                                                    |
-| Scheduled date of visit | schedule  | Array   | 来室予定日({YYYY-MM-DD, YYYY-MM-D'D', ...})<br>もし値が空の配列だった場合 bull を返します。 |
+| Scheduled date of visit | schedule  | Array   | 来室予定日({YYYY-MM-DD, YYYY-MM-D'D', ...})<br>もし値が空の配列だった場合 null を返します。 |
 
 - Response Data (JSON)
 
@@ -120,11 +120,11 @@ NISLAB Room Monitor API for AWS Lambda
 <table>
 <thead>
 <tr>
-<th scope="col">Primary Key</th>
-<th align="center" scope="col" rowspan="2" colspan="9">Attributes</th>
+<th scope="col">プライマリキー</th>
+<th align="center" scope="col" rowspan="2" colspan="9">属性</th>
 </tr>
 <tr>
-<th scope="col">Partition Key</th>
+<th scope="col">パーティションキー</th>
 </tr>
 <tr>
 <th align="center" scope="col">id</th>
@@ -154,3 +154,29 @@ NISLAB Room Monitor API for AWS Lambda
 </tr>
 </tbody>
 </table>
+
+## Status Code
+
+| ステータスコード | 概要                                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| 200 OK           | HTTP リクエストが成功した場合の標準的なレスポンスです。実際のレスポンスは、使用したリクエストメソッドによって異なります。                 |
+| 403 Forbidden    | リクエストは合法的なものでしたが、サーバーがその応答を拒否しています。401 Unauthorized レスポンスとは異なり、認証しても違いはありません。 |
+| 502 Bad Gateway  | サーバーがゲートウェイまたはプロキシとして動作しており、上流のサーバーから無効な応答を受信しました。                                      |
+
+---
+
+## 開発者向け
+
+### リポジトリの使い方
+
+1. フォークとクローン
+2. `git remote add upstream https://github.com/Kenny-NISLab/nisroom-api.git`
+3. `git pull upstream develop`
+
+### セットアップ
+
+1. `npm install`
+
+### コミットする前のフォーマット
+
+1. `npm run format`
