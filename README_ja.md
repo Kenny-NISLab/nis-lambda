@@ -82,8 +82,8 @@ NISLAB Room Monitor API for AWS Lambda
 | ----------------------- | ------------ | ------- | ------------------------ |
 | ID                      | id           | Value   | ID                       |
 | Image                   | avatar       | URL     | Slack のアイコン         |
-| First Name (En)         | e_first_name | String  | ファーストネーム（英語） |
-| Last Name (En)          | e_last_name  | String  | ラストネーム（英語）     |
+| First Name (En)         | e_first_name | String  | 名前（英語） |
+| Last Name (En)          | e_last_name  | String  | 苗字（英語）     |
 | Grade                   | grade        | String  | メンバーの学年           |
 | Status of stay          | is_stay      | Boolean | メンバーの研究室在室情報 |
 | First Name (Ja)         | j_first_name | String  | 名前                     |
@@ -120,11 +120,11 @@ NISLAB Room Monitor API for AWS Lambda
 <table>
 <thead>
 <tr>
-<th scope="col">Primary Key</th>
-<th align="center" scope="col" rowspan="2" colspan="9">Attributes</th>
+<th scope="col">プライマリキー</th>
+<th align="center" scope="col" rowspan="2" colspan="9">属性</th>
 </tr>
 <tr>
-<th scope="col">Partition Key</th>
+<th scope="col">パーティションキー</th>
 </tr>
 <tr>
 <th align="center" scope="col">id</th>
