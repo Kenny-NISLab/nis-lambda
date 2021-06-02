@@ -55,7 +55,102 @@ NISLAB Room Monitor API for AWS Lambda
 
 ## API リスト
 
-| No. | API ファンクション No. | 型 | API 名        | 概要               |
-| --- | ---------------- | ---- | --------------- | ---------------------- |
-| 0   | NISROOM-000      | API  | nisroom-api     | Production Environment |
-| 1   | NISROOM-001      | API  | nisroom-api-dev | Test Environment       |
+| No. | API 機能 No. | 型  | API 名          | 概要       |
+| --- | ------------ | --- | --------------- | ---------- |
+| 0   | NISROOM-000  | API | nisroom-api     | 製品版環境 |
+| 1   | NISROOM-001  | API | nisroom-api-dev | テスト環境 |
+
+### リソース 型名
+
+#### students
+
+---
+
+| HTTP メソッド | アクセス URI | 目的                         |
+| ------------- | ------------ | ---------------------------- |
+| GET           | /v1/students | メンバーに関する全情報を取得 |
+
+- GET Data (JSON)
+
+| カテゴリー | JSON キー | 型  | 概要 |
+| ---------- | --------- | --- | ---- |
+| None       |           |     |      |
+
+- Response Data (JSON)
+
+| カテゴリー              | JSON キー    | 型      | 概要                     |
+| ----------------------- | ------------ | ------- | ------------------------ |
+| ID                      | id           | Value   | ID                       |
+| Image                   | avatar       | URL     | Slack のアイコン         |
+| First Name (En)         | e_first_name | String  | ファーストネーム（英語） |
+| Last Name (En)          | e_last_name  | String  | ラストネーム（英語）     |
+| Grade                   | grade        | String  | メンバーの学年           |
+| Status of stay          | is_stay      | Boolean | メンバーの研究室在室情報 |
+| First Name (Ja)         | j_first_name | String  | 名前                     |
+| Last Name (Ja)          | j_last_name  | String  | 苗字                     |
+| Student ID              | student_id   | Value   | 学生 ID                  |
+| Scheduled date of visit | schedule     | Array   | 来室スケジュール         |
+
+#### id
+
+---
+
+| HTTP メソッド | アクセス URI      | 目的                       |
+| ------------- | ----------------- | -------------------------- |
+| PATCH         | /v1/students/{id} | メンバーに関する情報の更新 |
+
+- PATCH Data (JSON)
+
+| カテゴリー              | JSON キー | 型      | 概要                                                                                        |
+| ----------------------- | --------- | ------- | ------------------------------------------------------------------------------------------- |
+| Status of stay          | is_stay   | Boolean | メンバーの研究室在室情報                                                                    |
+| Scheduled date of visit | schedule  | Array   | 来室予定日({YYYY-MM-DD, YYYY-MM-D'D', ...})<br>もし値が空の配列だった場合 bull を返します。 |
+
+- Response Data (JSON)
+
+| カテゴリー              | JSON キー | 型      | 概要                                            |
+| ----------------------- | --------- | ------- | ----------------------------------------------- |
+| Status of stay          | is_stay   | Boolean | メンバーの研究室在室情報                        |
+| Scheduled date of visit | schedule  | Array   | 来室予定日 (["YYYY-MM-DD", "YYYY-MM-D'D', ...]) |
+
+## データベースデザインと構造
+
+### students テーブル
+
+<table>
+<thead>
+<tr>
+<th scope="col">Primary Key</th>
+<th align="center" scope="col" rowspan="2" colspan="9">Attributes</th>
+</tr>
+<tr>
+<th scope="col">Partition Key</th>
+</tr>
+<tr>
+<th align="center" scope="col">id</th>
+<th align="center" scope="col">avater</th>
+<th align="center" scope="col">e_first_name</th>
+<th align="center" scope="col">e_last_name</th>
+<th align="center" scope="col">grade</th>
+<th align="center" scope="col">is_stay</th>
+<th align="center" scope="col">j_first_name</th>
+<th align="center" scope="col">j_last_name</th>
+<th align="center" scope="col">student_id</th>
+<th align="center" scope="col">schedule</th>
+</tr>
+</thread>
+<tbody>
+<tr>
+<th align="center">{Integer}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{Boolean}</th>
+<th align="center">{String}</th>
+<th align="center">{String}</th>
+<th align="center">{Integer}</th>
+<th align="center">{StringSet}</th>
+</tr>
+</tbody>
+</table>
