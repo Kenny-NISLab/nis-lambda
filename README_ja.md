@@ -39,9 +39,7 @@
 ---
 
 ## 概要
-
-NISLAB Room Monitor API for AWS Lambda
-
+AWS Lambda を用いた NISLAB ルームモニターAPI です
 ### フロントエンド
 
 [![nisroom](https://img.shields.io/badge/GitHub-nisroom-orange)](https://github.com/Kenny-NISLab/nisroom)
@@ -155,7 +153,7 @@ NISLAB Room Monitor API for AWS Lambda
 </tbody>
 </table>
 
-## Status Code
+## ステータスコード
 
 | ステータスコード | 概要                                                                                                                                      |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
