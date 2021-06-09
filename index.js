@@ -6,32 +6,38 @@ const dynamoDB = new AWS.DynamoDB.DocumentClient({
 });
 
 // handler 関数
+// 3つの引数については https://tech.mti.co.jp/entry/2016/12/02/338/ がわかりやすくまとまってるかも
 exports.handler = (event, context, callback) => {
   // API Gateway から渡されるデータについて CloudWatch Log で確認しよう
   console.log("event:", event);
 
+  // 'GET'メソッド && '/students'リソース
+  if (event.httpMethod === "GET" && event.pathParameters.proxy === "students") {
+    getAllStudents(callback);
+  }
+};
+
+// 全学生データを取得してコールバック
+function getAllStudents(callback) {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
   };
 
-  // 'GET'メソッド && '/students'リソース
-  if (event.httpMethod === "GET" && event.pathParameters.proxy === "students") {
-    // DynamoDBから全データ取得
-    dynamoDB.scan(params, function (err, data) {
-      if (err) {
-        console.error("Error:", err);
-      } else {
-        const response = {
-          statusCode: 200,
-          headers: {
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "*",
-          },
-          body: JSON.stringify(data),
-        };
-        callback(null, response);
-      }
-    });
-  }
-};
+  // DynamoDBから全データ取得
+  dynamoDB.scan(params, function (err, data) {
+    if (err) {
+      console.error("Error:", err);
+    } else {
+      const response = {
+        statusCode: 200,
+        headers: {
+          "Access-Control-Allow-Headers": "*",
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "*",
+        },
+        body: JSON.stringify(data),
+      };
+      callback(null, response);
+    }
+  });
+}
