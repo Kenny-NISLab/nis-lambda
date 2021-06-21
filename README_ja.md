@@ -10,14 +10,14 @@
     <a href = "https://aws.amazon.com/jp/"><img src="https://img.shields.io/badge/-Amazon%20AWS-232F3E.svg?logo=amazon-aws&style=flat" alt="aws"></a>
     <a href = "https://nodejs.org/ja/about/"><img src="https://img.shields.io/badge/-Node.js-339933.svg?logo=node.js&style=flat" alt="nodejs"></a>
     <a href = "https://github.com/Kenny-NISLab/nisroom-api"><img src="https://img.shields.io/badge/-GitHub-181717.svg?logo=github&style=flat" alt = "GitHub"></a>
-    <a href = "https://slack.com/intl/ja-jp/"><img src="https://img.shields.io/badge/-Slack-4A154B.svg?logo=slack&style=flat" alt = "Slack">
+    <a href = "https://slack.com/intl/ja-jp/"><img src="https://img.shields.io/badge/-Slack-4A154B.svg?logo=slack&style=flat" alt = "Slack"></a>
     <br>
     <br>
-    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/getStudents.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/getStudents.yml/badge.svg">
-    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/patchStudent.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/patchStudent.yml/badge.svg">
+    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/getStudents.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/getStudents.yml/badge.svg"></a>
+    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/patchStudent.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/patchStudent.yml/badge.svg"></a>
     <br>
-    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledDeletePastDate.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledDeletePastDate.yml/badge.svg">
-    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledLeaveStudents.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledLeaveStudents.yml/badge.svg">
+    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledDeletePastDate.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledDeletePastDate.yml/badge.svg"></a>
+    <a href = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledLeaveStudents.yml"><img src = "https://github.com/Kenny-NISLab/nisroom-api/actions/workflows/scheduledLeaveStudents.yml/badge.svg"></a>
 </div>
 
 # <p align="center">NISROOM API for Lambda</p>
@@ -34,12 +34,15 @@
 <a href="https://github.com/RSugimoto2017"><img src="https://avatars.githubusercontent.com/u/81292583?v=4" alt="RSugimoto2017" height="120px"></a>
 <a href="https://github.com/cotaroo"><img src="https://avatars.githubusercontent.com/u/46442631?v=4" alt="cotaroo" height="120px"></a>
 <a href="https://github.com/uzumal"><img src="https://avatars.githubusercontent.com/u/52265875?v=4" alt="uzumal" height="120px"></a>
+<a href="https://github.com/SioCon"><img src="https://avatars.githubusercontent.com/u/82917550?v=4" alt="SioCon" height="120px"></a>
 </div>
 
 ---
 
 ## 概要
-AWS Lambda を用いた NISLAB ルームモニターAPI です
+
+AWS Lambda を用いた NISLAB ルームモニター API です
+
 ### フロントエンド
 
 [![nisroom](https://img.shields.io/badge/GitHub-nisroom-orange)](https://github.com/Kenny-NISLab/nisroom)
