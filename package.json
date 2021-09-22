@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --fix",
-    "format": "prettier --write **/*.{html,css,js,json,md}",
+    "format": "prettier --write **/*.{js,json,md}",
     "fix": "npm run format && npm run lint",
     "test": "jest"
   },
