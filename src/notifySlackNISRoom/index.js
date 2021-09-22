@@ -104,7 +104,7 @@ async function create_nomember_message() {
 async function create_member_message(stay_member) {
   let stay_member_txt = stay_member.join("・");
   return {
-    text: timeFmt + "：" + stay_member.length + " 人（" + stay_member_txt + "）が研究室にいるようです。",
+    text: "[" + timeFmt + "]" + stay_member.length + " 人（" + stay_member_txt + "）が研究室にいるようです。",
     blocks: [
       {
         type: "header",
