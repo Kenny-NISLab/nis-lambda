@@ -54,7 +54,7 @@ async function createText(students) {
   });
 
   let data = {};
-  if (stay_member) {
+  if (stay_member.length) {
     data = await create_member_message(stay_member);
   } else {
     data = await create_nomember_message();
@@ -104,7 +104,7 @@ async function create_nomember_message() {
 async function create_member_message(stay_member) {
   let stay_member_txt = stay_member.join("・");
   return {
-    text: timeFmt + " 現在、" + stay_member.length + " 人（" + stay_member_txt + "）が研究室にいるようです。",
+    text: "[" + timeFmt + "]" + stay_member.length + " 人（" + stay_member_txt + "）が研究室にいるようです。",
     blocks: [
       {
         type: "header",
@@ -122,7 +122,7 @@ async function create_member_message(stay_member) {
             stay_member_txt +
             "\n\n*<" +
             NISROOM_URL +
-            "|NISROOM>*\n\n- 情報には間違いがある可能性があります．\n- このお知らせは毎日9〜18時に配信しています．",
+            "|NISROOM>*\n\n※ 情報には間違いがある可能性があります．\n※ このお知らせは毎日9〜18時に配信しています．",
         },
       },
       {
