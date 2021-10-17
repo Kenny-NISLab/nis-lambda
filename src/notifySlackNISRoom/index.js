@@ -46,6 +46,10 @@ exports.handler = () => {
  * @param {Array} students
  */
 async function createText(students) {
+  students.sort(function (a, b) {
+    return a.id - b.id
+  });
+
   let stay_member = new Array();
   students.forEach((student) => {
     if (student.is_stay) {
