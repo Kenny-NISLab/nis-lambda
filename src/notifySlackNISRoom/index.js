@@ -126,7 +126,7 @@ async function create_member_message(stay_member) {
             stay_member_txt +
             "\n\n*<" +
             NISROOM_URL +
-            "|NISROOM>*\n\n※ 情報には間違いがある可能性があります。\n※ このお知らせは毎日9〜18時に配信しています。",
+            "|NISROOM>*\n\n※ 情報には間違いがある可能性があります。\n※ このお知らせは毎日9〜19時に配信しています。",
         },
       },
       {
