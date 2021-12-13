@@ -1,6 +1,5 @@
 # Custom
 .env
-package-lock.json
 
 # General
 .DS_Store
