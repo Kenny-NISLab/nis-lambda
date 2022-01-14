@@ -61,7 +61,7 @@ async function createText(students) {
   if (stay_member.length) {
     data = await create_member_message(stay_member);
   } else {
-    data = await create_nomember_message();
+    // data = await create_nomember_message();
   }
 
   const req = https.request(WEBHOOK_URL, options, function (res) {
