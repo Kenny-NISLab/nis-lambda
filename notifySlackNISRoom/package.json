@@ -8,7 +8,5 @@
     "axios": "^0.25.0",
     "moment": "^2.29.1"
   },
-  "devDependencies": {
-    "dotenv": "^14.2.0"
-  }
+  "devDependencies": {}
 }

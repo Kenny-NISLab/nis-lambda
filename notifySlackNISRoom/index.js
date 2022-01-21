@@ -2,8 +2,6 @@ const AWS = require("aws-sdk");
 const axios = require("axios");
 const moment = require("moment");
 
-// require("dotenv").config();
-
 AWS.config.update({
   region: "ap-northeast-1",
   endpoint: "dynamodb.ap-northeast-1.amazonaws.com",
