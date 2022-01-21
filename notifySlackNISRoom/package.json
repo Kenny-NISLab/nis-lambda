@@ -1,0 +1,14 @@
+{
+  "name": "notify-slack-nisroom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.1061.0",
+    "axios": "^0.25.0",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "dotenv": "^14.2.0"
+  }
+}
