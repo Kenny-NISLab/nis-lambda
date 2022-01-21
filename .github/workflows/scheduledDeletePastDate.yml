@@ -4,7 +4,7 @@ on:
     branches:
       - main
     paths:
-      - "src/scheduledDeletePastDate/**"
+      - "scheduledDeletePastDate/**"
 jobs:
   AWS_Lambda_Deploy:
     runs-on: ubuntu-latest
@@ -14,11 +14,12 @@ jobs:
       #   with:
       #     node-version: '14'
       # - run: npm install --production
+      - run: cd scheduledDeletePastDate
+      # - run: yarn install --production
+      - run: zip -r function.zip .
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
-      - run: |
-          zip -j function.zip ./src/scheduledDeletePastDate/index.js
-          aws lambda update-function-code --function-name scheduledDeletePastDate --zip-file fileb://function.zip
+      - run: aws lambda update-function-code --function-name scheduledDeletePastDate --zip-file fileb://function.zip
