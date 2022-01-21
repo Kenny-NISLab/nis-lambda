@@ -23,7 +23,7 @@ exports.handler = function () {
     },
   };
 
-  docClient.scan(params, function (err, data) {
+  docClient.scan(params, (err, data) => {
     if (err) {
       console.log("Error:", err);
     } else if (data.Items.length) {
@@ -49,7 +49,7 @@ function leaveStudent(student) {
     ReturnValues: "NONE",
   };
 
-  docClient.update(params, function (err) {
+  docClient.update(params, (err) => {
     if (err) {
       console.error(err);
     }
