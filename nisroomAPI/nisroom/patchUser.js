@@ -10,12 +10,10 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 const params = {
   TableName: Consistant.aws_dynamodb_students_tableName,
-  ProjectionExpression: "#name, studentId, avatarImage, isStay, #archive",
-  ExpressionAttributeNames: {
-    "#name": "name",
-    "#archive": "archive",
-  },
   Key: {},
+  UpdateExpression: "set isStay = :i",
+  ExpressionAttributeValues: {},
+  ReturnValues: "NONE",
 };
 
 const response = {
@@ -29,19 +27,21 @@ const response = {
 };
 
 module.exports = async function (event, callback) {
-  params.Key.name = event.path[1];
+  if (event.body.isStay !== true && event.body.isStay !== false) {
+    callback(new Error("You need request body isStay(Boolean)."));
+  } else {
+    params.Key.name = event.path[1];
+    params.ExpressionAttributeValues[":i"] = event.body.isStay;
 
-  docClient.get(params, (err, data) => {
-    if (err) {
-      console.error(err);
-      callback(new Error(err));
-    } else if (data.Item) {
-      response.body = JSON.stringify(data.Item);
-    } else {
-      response.statusCode = 404;
-      response.body = JSON.stringify({ message: "Item not found." });
-    }
-  });
+    docClient.update(params, (err, data) => {
+      if (err) {
+        console.error(err);
+        callback(new Error(err));
+      } else {
+        response.body = JSON.stringify(data);
+      }
+    });
+  }
 
   await callback(null, response);
 };

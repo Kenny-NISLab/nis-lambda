@@ -34,10 +34,8 @@ const response = {
 module.exports = async function (callback) {
   docClient.scan(params, (err, data) => {
     if (err) {
-      callback(new Error("internal server error"));
-      // response.statusCode = 404;
-      // response.body = JSON.stringify(err);
-      // console.error(err);
+      console.error(err);
+      callback(new Error(err));
     } else if (data.Items.length) {
       response.body = JSON.stringify(data.Items.sort((a, b) => a.studentId - b.studentId));
     } else {
@@ -46,5 +44,5 @@ module.exports = async function (callback) {
     }
   });
 
-  callback(null, response);
+  await callback(null, response);
 };
