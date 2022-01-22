@@ -21,5 +21,3 @@ exports.handler = async (event, context, callback) => {
   };
   return response;
 };
-
-this.handler({ httpMethod: "GET", pathParameters: { proxy: "users" } });
