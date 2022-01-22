@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 
-const Users = require("users");
+const Users = require("./users");
 
 AWS.config.update({
   region: "ap-northeast-1",
@@ -21,3 +21,5 @@ exports.handler = async (event, context, callback) => {
   };
   return response;
 };
+
+this.handler({ httpMethod: "GET", pathParameters: { proxy: "users" } });

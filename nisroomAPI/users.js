@@ -1,3 +1,3 @@
-module.exports = function abc() {
-  console.log(abc);
+module.exports = async function () {
+  console.log("abc");
 };
