@@ -101,9 +101,7 @@ async function createText(students) {
   config.data = await create_member_message(studentsList);
 
   await axios(WEBHOOK_URL, config)
-    .then((res) => {
-      console.log(res);
-    })
+    .then(() => {})
     .catch((error) => {
       console.error(error);
     });

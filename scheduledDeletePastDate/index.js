@@ -57,7 +57,7 @@ function deletePastDate(student) {
 
       docClient.update(params, function (err) {
         if (err) {
-          console.log("Error:", err);
+          console.error(err);
         }
       });
     }

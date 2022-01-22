@@ -25,7 +25,7 @@ exports.handler = function () {
 
   docClient.scan(params, (err, data) => {
     if (err) {
-      console.log("Error:", err);
+      console.error(err);
     } else if (data.Items.length) {
       leaveAllStudents(data.Items);
     }
