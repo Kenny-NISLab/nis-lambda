@@ -12,9 +12,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 exports.handler = async (event, context, callback) => {
   console.log("event:", event);
   if (event.httpMethod === "GET" && event.pathParameters.proxy === "users") {
-    if (!event.queryStringParameters) {
-      Users();
-    }
+    Users();
   }
 
   const response = {
