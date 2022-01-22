@@ -1,0 +1,12 @@
+{
+  "name": "scheduled-delete-past-date",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.1061.0"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}

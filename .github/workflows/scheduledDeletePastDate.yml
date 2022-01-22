@@ -1,4 +1,4 @@
-name: Lambda Deploy - scheduledDeletePastDate
+name: Deploy - scheduledDeletePastDate
 on:
   push:
     branches:
@@ -10,16 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # - uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '14'
-      # - run: npm install --production
-      - run: cd scheduledDeletePastDate
-      # - run: yarn install --production
-      - run: zip -r function.zip .
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - run: yarn install --production && zip -r function.zip .
+        working-directory: ./scheduledDeletePastDate
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
       - run: aws lambda update-function-code --function-name scheduledDeletePastDate --zip-file fileb://function.zip
+        working-directory: ./scheduledDeletePastDate
