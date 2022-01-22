@@ -9,7 +9,7 @@ const docClient = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = function () {
   const params = {
-    TableName: process.env.DYNAMODB_TABLE,
+    TableName: "Students",
     ProjectionExpression: "#name",
     FilterExpression: "#archive = :archive AND #isStay = :isStay",
     ExpressionAttributeNames: {
@@ -38,7 +38,7 @@ function leaveAllStudents(students) {
 
 function leaveStudent(student) {
   const params = {
-    TableName: process.env.DYNAMODB_TABLE,
+    TableName: "Students",
     Key: {
       name: student.name,
     },
