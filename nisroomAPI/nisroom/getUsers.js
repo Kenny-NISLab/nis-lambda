@@ -9,8 +9,8 @@ AWS.config.update({
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 const params = {
-  TableName: Consistant.aws_dynamodb_tableName,
-  ProjectionExpression: "#name, studentId, avatarImage, isStay",
+  TableName: Consistant.aws_dynamodb_students_tableName,
+  ProjectionExpression: "#name, studentId, avatarImage, isStay, #archive",
   FilterExpression: "#archive = :archive",
   ExpressionAttributeNames: {
     "#archive": "archive",
@@ -30,16 +30,18 @@ const response = {
   },
   body: {},
 };
+
 module.exports = async function (callback) {
   docClient.scan(params, (err, data) => {
     if (err) {
-      response.statusCode = 404;
-      response.body = JSON.stringify(err);
-      // res.status(404).json({ message: "Database connection error." });
-      console.error(err);
+      callback(new Error("internal server error"));
+      // response.statusCode = 404;
+      // response.body = JSON.stringify(err);
+      // console.error(err);
     } else if (data.Items.length) {
       response.body = JSON.stringify(data.Items.sort((a, b) => a.studentId - b.studentId));
     } else {
+      response.statusCode = 404;
       response.body = JSON.stringify({ message: "Item not found." });
     }
   });

@@ -1,17 +1,17 @@
-// const Consistant = require("./consistant");
-const getUsers = require("./api/getUsers");
+const getUsers = require("./nisroom/getUsers");
+const getUser = require("./nisroom/getUser");
 
 exports.handler = async (event, context, callback) => {
   console.log("event:", event);
+
   if (event.httpMethod === "GET" && event.path === "/users") {
     getUsers(callback);
+  } else if (event.httpMethod === "GET") {
+    getUser(event, callback);
   } else {
-    const response = {
-      statusCode: 200,
-      body: JSON.stringify("Hello from Lambda!"),
+    return {
+      statusCode: 404,
+      body: JSON.stringify({ message: "Invalid API requested." }),
     };
-    return response;
   }
 };
-
-// this.handler();
