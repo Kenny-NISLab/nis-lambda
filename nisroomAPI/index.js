@@ -1,7 +1,7 @@
 const getUsers = require("./nisroom/getUsers");
 const getUser = require("./nisroom/getUser");
 const patchUser = require("./nisroom/patchUser");
-const getUsersBarChart = require("./nislog/getStudentsBarChart");
+const getLogs = require("./nislog/getLogs");
 
 exports.handler = async (event, context, callback) => {
   event.path = decodeURI(event.path).split("/").filter(Boolean); // パス内に日本語が存在する可能性があるのでデコード後，パスをパースし，空文字を削除して整形
@@ -28,7 +28,7 @@ exports.handler = async (event, context, callback) => {
     switch (event.path.length) {
       case 1: {
         if (event.httpMethod === "GET") {
-          await getUsers(callback);
+          await getLogs(callback);
         }
         break;
       }
