@@ -1,53 +1,53 @@
 const AWS = require("aws-sdk");
+const moment = require("moment");
 
-AWS.config.update({region: process.env.DYNAMODB_REGION});
-const dynamoDB = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+AWS.config.update({
+  region: "ap-northeast-1",
+  endpoint: "dynamodb.ap-northeast-1.amazonaws.com",
+});
 
-// const dynamoDB = new AWS.DynamoDB.DocumentClient({
-//   region: process.env.DYNAMODB_REGION,
-// });
+const docClient = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
-
   // 変更イベントが配列として渡される
-  event.Records.map(record => {
+  event.Records.map((record) => {
+    if (record.eventName === "MODIFY") {
+      const OldImage = record.dynamodb.OldImage;
+      const NewImage = record.dynamodb.NewImage;
 
-    if(record.eventName === 'MODIFY'){
-      const oldItem = record.dynamodb.OldImage;
-      const newItem = record.dynamodb.NewImage;
+      if (OldImage.isStay !== NewImage.isStay) {
+        console.log("DynamoDB Modify:", OldImage, NewImage);
 
-      if(oldItem.is_stay !== newItem.is_stay){
+        // const now = Date.parse(new Date()).toString(10);
 
-        const now = Date.parse(new Date()).toString(10);
+        // let inout = null;
+        // if(newItem.is_stay.BOOL){
+        //   inout = 'in';
+        // }else{
+        //   inout = 'out';
+        // }
 
-        let inout = null;
-        if(newItem.is_stay.BOOL){
-          inout = 'in';
-        }else{
-          inout = 'out';
-        }
+        // const item = {
+        //   'id': newItem.id,
+        //   'created_at': {N: now},
+        //   'j_full_name': newItem.j_full_name,
+        //   'e_full_name': newItem.e_full_name,
+        //   'inout': {S: inout},
+        // };
 
-        const item = {
-          'id': newItem.id,
-          'created_at': {N: now},
-          'j_full_name': newItem.j_full_name,
-          'e_full_name': newItem.e_full_name,
-          'inout': {S: inout},
-        };
-
-        dynamodbPut(item);
+        // dynamodbPut(item);
       }
     }
   });
 };
 
-function dynamodbPut(item){
+function dynamodbPut(item) {
   const params = {
     TableName: process.env.DYNAMODB_TABLE,
     Item: item,
   };
 
-  dynamoDB.putItem(params, function (err, data) {
+  docClient.putItem(params, function (err, data) {
     if (err) {
       console.log("Error:", err);
     } else {
